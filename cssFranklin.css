@@ -1,0 +1,167 @@
+body {
+    background-image: url("weatherBackground.jpg");
+    background-size: cover;
+    font-size: .8em;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 2.8em;
+}
+
+#navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.franklin {
+    color: darkred;
+    margin-right: 1em;
+    font-size: 1.3em;
+}
+
+.greenville {
+    color: darkred;
+    margin-right: 1em;
+    font-size: 1.3em;
+}
+
+.springfield {
+    color: darkred;
+    font-size: 1.3em;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    color: darkgreen;
+    font-size: 2.1em;
+}
+
+.today {
+    display: flex;
+    justify-content: center;
+    color: darkgray;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.tomorrow {
+    display: none;
+    color: darkgray;
+    text-align: center;
+    font-size: 1.6em;
+    position: absolute;
+    top: 9.45em;
+    right: 25%;
+}
+
+.sunnyImage {
+    display: flex;
+    float: left;
+    margin-left: 17%;
+    width: 6.25em;
+    height: 6.25em;
+}
+
+.sunnyImageTomorrow {
+    display: none;
+    float: right;
+    width: 6.25em;
+    height: 6.25em;
+}
+
+.weatherStats {
+    display: flex;
+    flex-flow: column;
+    float: left;
+    margin-top: -1.1%;
+    width: 12em;
+}
+
+.weatherStatsTomorrow {
+    display: none;
+    float: right;
+    margin-right: 14%;
+    margin-top: -1.1%;
+    width: 12em;
+}
+
+.high {
+    color: crimson;
+}
+
+.low {
+    color: blue;
+}
+
+.hourly {
+    display: none;
+    flex-flow: column;
+    float: left;
+    margin-left: 20%;
+    width: 22em;
+}
+
+.hourlyTomorrow {
+    display: none;
+    float: right;
+    margin-right: 20%;
+    width: 10em;
+}
+
+.wireframeImage {
+    display: flex;
+    width: 18em;
+    height: 10em;
+    margin-top: 3%;
+    padding-right: 30%;
+}
+
+.wireframeImageTablet {
+    display: flex;
+    width: 18em;
+    height: 10em;
+    margin-top: 1%;
+}
+
+.wireframeImageBrowser {
+    display: flex;
+    width: 18em;
+    height: 10em;
+    margin-top: 1%;
+}
+
+@media screen and (min-width: 40em) {
+    body {
+        font-size: .7em;
+    }
+    .today {
+        margin-right: 50%;
+    }
+    .tomorrow {
+        display: flex;
+    }
+    .sunnyImageTomorrow {
+        display: flex;
+    }
+    .weatherStatsTomorrow {
+        display: flex;
+        flex-flow: column;
+    }
+    .hourly {
+        display: flex;
+    }
+    .hourlyTomorrow {
+        display: flex;
+        flex-flow: column;
+    }
+}
+
+@media screen and (min-width: 90em) {
+    body {
+        font-size: 1.3em;
+    }
+}
