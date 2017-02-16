@@ -19,36 +19,45 @@
    </header>
 
    <nav id="navigation">
-       <a class="franklin" href="franklinWeather.html" title="Franklin">Franklin</a>
-       <a class="greenville" href="greenvilleWeather.html" title="Greenville">Greenville</a>
-       <a class="springfield" href="springfield" title="Springfield">Springfield</a>
+       <ul class="nav">
+           <li><a class="franklin" href="franklinWeather.html" title="Franklin">Franklin</a></li>
+           <li><a class="greenville" href="greenvilleWeather.html" title="Greenville">Greenville</a></li>
+           <li><a class="springfield" href="springfield" title="Springfield">Springfield</a></li>
+       </ul>
    </nav>
 
    <main>
       <h3>Franklin</h3>
-      <h5 class="today">Today</h5>
-      <h5 class="tomorrow">Tomorrow</h5>
-      <img class="sunnyImage" alt="sunny" src="sunny.png">
-      <ul class="weatherStats">
-         <li class="high">High: 90&deg;</li>
-         <li class="low">Low: 66&deg;</li>
-         <li>Wind: 1-5 mph</li>
-         <li>Direction: Southwest</li>
-         <li>Precipitation: 0%</li>
-         <li>Longitude: -111.803757</li>
-         <li>Latitude: 42.011902</li>
+
+      <ul class="day">
+          <li><h5 class="today">Today</h5></li>
+          <li><h5 class="tomorrow">Tomorrow</h5></li>
       </ul>
-      <ul class="weatherStatsTomorrow">
+
+      <section id="stats">
+         <ul><li><img class="sunnyImage" alt="sunny" src="sunny.png"></li></ul>
+         <ul class="weatherStats">
+            <li class="high">High: 90&deg;</li>
+            <li class="low">Low: 66&deg;</li>
+            <li>Wind: 1-5 mph</li>
+            <li>Direction: Southwest</li>
+            <li>Precipitation: 0%</li>
+            <li>Longitude: -111.8037</li>
+            <li>Latitude: 42.0119</li>
+         </ul>
+         <ul><li><img class="sunnyImageTomorrow" alt="sunny" src="sunny.png"></li></ul>
+         <ul class="weatherStatsTomorrow">
            <li class="high">High: </li>
            <li class="low">Low: </li>
            <li>Wind: 20mph</li>
            <li>Direction: South</li>
            <li>Precipitation: 50%</li>
-           <li>Longitude: -111.803757</li>
-           <li>Latitude: 42.011902</li>
-      </ul>
-      <img class="sunnyImageTomorrow" alt="sunny" src="sunny.png">
+           <li>Longitude: -111.8037</li>
+           <li>Latitude: 42.0119</li>
+         </ul>
+      </section>
 
+      <section id="hours">
        <ul class="hourly">
            <li>12am - 67&deg;</li>
            <li>1am - 67&deg;</li>
@@ -101,6 +110,8 @@
            <li>12am - 45&deg;</li>
            <li>12am - 45&deg;</li>
        </ul>
+       </section>
+
 
       <img class="wireframeImage" alt="weather cell" src="weatherCell.jpg"><br>
       <img class="wireframeImageTablet" alt="weather cell" src="weatherTablet.jpg"><br>

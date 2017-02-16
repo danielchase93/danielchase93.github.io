@@ -22,16 +22,40 @@ body{
 
 #hi-lo{
   list-style: none;
+  display: flex;
+/*
   margin: 0;
   padding: 0;
+*/
 }
 #hi-lo>li{
+    flex: 1 1 auto;
+    text-align: center;
+/*
   display: inline-block;
-  width: 24%; /* Browser rounding errors force this down */
+  width: 24%;
   text-align: center;
   vertical-align: top;
+*/
+}
+
+.cloudyImage {
+    width: 6em;
+    height: 5em;
 }
 
 #hi-lo #conditions{
-  width: 48%; /* Browser rounding errors force this down */
+    flex-grow: 2;
+ /* width: 48%;  Browser rounding errors force this down */
+}
+
+
+#data {
+    list-style: none;
+    border-style: solid;
+    display: flex;
+}
+#data>li {
+    flex: 1 1 auto;
+    text-align: center;
 }
