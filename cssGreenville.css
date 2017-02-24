@@ -97,9 +97,19 @@ color: blue;
 
 
 
-
 #hours {
-display: none;
+    display: flex;
+}
+#hours>ul {
+    list-style: none;
+    flex-flow: column;
+    flex: 1 1 auto;
+}
+#hours>ul>li {
+    text-align: center;
+}
+.hourlyTomorrow {
+    display: none;
 }
 
 
@@ -188,17 +198,11 @@ color: blue;
 
 
 
-#hours {
-display: flex;
+
+.hourlyTomorrow {
+    display: block;
 }
-#hours>ul {
-list-style: none;
-flex-flow: column;
-flex: 1 1 auto;
-}
-#hours>ul>li {
-text-align: center;
-}
+
 
 
 }
