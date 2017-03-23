@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<!-- The head is for the browser -->
+<head>
+<meta charset="UTF-8">
+<title>Franklin Weather | Best Weather | danielchase93</title>
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="css-weather-home.css">
+
+</head>
+
+<!-- The body is for the site visitor -->
+<body>
+<p><a href="index.html">Homepage</a>
+<header>
+<h1>Best Weather</h1>
+</header>
+
+<nav id="navigation">
+<ul class="nav">
+<li><a class="franklin" href="franklinWeather.html" title="Franklin">Franklin</a></li>
+<li><a class="greenville" href="greenvilleWeather.html" title="Greenville">Greenville</a></li>
+<li><a class="springfield" href="springfield" title="Springfield">Springfield</a></li>
+</ul>
+</nav>
+
+<main>
+<h3 id="cityDisplay"></h3>
+
+<ul class="day">
+<li><h5 class="today">Today</h5><br><h7 class="currentTemp"></h7></li>
+<li><h5 class="tomorrow">Tomorrow</h5></li>
+</ul>
+
+<div id="stats">
+<ul><li><img class="sunnyImage" alt="sunny" src="sunny.png"></li></ul>
+<ul class="weatherStats">
+<li id="summary"></li>
+<li id="wind"></li>
+<li id="humid"></li>
+<li id="feels"></li>
+<li id="long"></li>
+<li id="lat"></li>
+</ul>
+<ul><li><img class="sunnyImageTomorrow" alt="sunny" src="sunny.png"></li></ul>
+<ul class="weatherStatsTomorrow">
+<li>Wind: 20mph</li>
+<li>Direction: South</li>
+<li>Precipitation: 50%</li>
+<li>Longitude: -111.8037</li>
+<li>Latitude: 42.0119</li>
+</ul>
+</div>
+
+<div id="hours">
+<ul class="hourly">
+<li>12am - 67&deg;</li>
+<li>1am - 67&deg;</li>
+<li>2am - 69&deg;</li>
+<li>3am - 69&deg;</li>
+<li>4am - 69&deg;</li>
+<li>5am - 70&deg;</li>
+<li>6am - 69&deg;</li>
+<li>7am - 72&deg;</li>
+<li>8am - 74&deg;</li>
+<li>9am - 77&deg;</li>
+<li>10am - 79&deg;</li>
+<li>11am - 81&deg;</li>
+<li>12pm - 84&deg;</li>
+<li>1pm - 86&deg;</li>
+<li>2pm - 88&deg;</li>
+<li>3pm - 90&deg;</li>
+<li>4pm - 90&deg;</li>
+<li>5pm - 85&deg;</li>
+<li>6pm - 83&deg;</li>
+<li>7pm - 79&deg;</li>
+<li>8pm - 74&deg;</li>
+<li>9pm - 70&deg;</li>
+<li>10pm - 68&deg;</li>
+<li>11pm - 66&deg;</li>
+</ul>
+<ul class="hourlyTomorrow">
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+<li>12am - 45&deg;</li>
+</ul>
+</div>
+
+
+<img class="wireframeImage" alt="weather cell" src="weatherCell.jpg"><br>
+<img class="wireframeImageTablet" alt="weather cell" src="weatherTablet.jpg"><br>
+<img class="wireframeImageBrowser" alt="weather cell" src="weatherBrowser.jpg">
+</main>
+
+<footer id="footer">
+<ul>
+<li>&copy;2017</li>
+</ul>
+</footer>
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="remote_wu.js"></script>
+
+
+</body>
+
+</html>
