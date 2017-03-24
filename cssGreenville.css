@@ -24,7 +24,7 @@ display: flex;
 justify-content: center;
 margin: 0;
 padding: 0;
-font-size: 1.6em;
+font-size: 1.3em;
 }
 .nav>li {
 flex: .14 .14 auto;
@@ -143,6 +143,10 @@ body {
     font-size: 1em;
 }
 
+
+.nav {
+    font-size: 1.6em;
+}
 
 
 .day {

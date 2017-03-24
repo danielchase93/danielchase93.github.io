@@ -28,14 +28,27 @@
 
 <nav id="navigation">
 <ul class="nav">
-<li><a class="franklin" href="franklinWeather.html" title="Franklin">Franklin</a></li>
-<li><a class="greenville" href="greenvilleWeather.html" title="Greenville">Greenville</a></li>
-<li><a class="springfield" href="springfield" title="Springfield">Springfield</a></li>
+    <li><a class="weatherHome" href="../weather-home.html" title="Weather Home">Home</a></li>
+    <li><a class="franklin" href="../franklinWeather.html" title="Franklin">Franklin</a></li>
+    <li><a class="greenville" href="../greenvilleWeather.html" title="Greenville">Greenville</a></li>
+    <li><a class="springfield" href="springfield" title="Springfield">Springfield</a></li>
+    <li><a class="searchLink" href="search.html" title="Search">Search</a></li>
 </ul>
 </nav>
 
 <main>
 <h3 id="cityDisplay"></h3>
+
+
+
+    <form method="get" action="//autocomplete.wunderground.com/aq" id="srchfrm">
+        <input type="search" name="query" id="query">
+        <input type="submit" name="submit" value="Search" id="send">
+    </form>
+
+    <section id="searchResults">
+        <h2>Search Results</h2>
+    </section>
 
 
 
@@ -58,7 +71,7 @@
 src="https://code.jquery.com/jquery-3.2.1.min.js"
 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous"></script>
-<script src="remote_wu.js"></script>
+<script src="remote_search.js"></script>
 
 
 </body>

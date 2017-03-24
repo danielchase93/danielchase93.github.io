@@ -24,7 +24,7 @@ display: flex;
 justify-content: center;
 margin: 0;
 padding: 0;
-font-size: 1.6em;
+font-size: 1.3em;
 }
 .nav>li {
 flex: .14 .14 auto;
@@ -148,6 +148,12 @@ margin-top: 1%;
 @media screen and (min-width: 35em) {
 body {
 font-size: 1em;
+}
+
+
+
+.nav {
+    font-size: 1.6em;
 }
 
 
