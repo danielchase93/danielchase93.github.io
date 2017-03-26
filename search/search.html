@@ -41,6 +41,35 @@
 
 
 
+
+    <ul class="day">
+        <li><h5 class="today">Today</h5><br><h6 class="currentTemp"></h6></li>
+        <li><h5 class="tomorrow">Tomorrow</h5></li>
+    </ul>
+
+    <div id="stats">
+        <ul><li><img class="sunnyImage" alt="sunny" src="../sunny.png"></li></ul>
+        <ul class="weatherStats">
+            <li id="summary"></li>
+            <li id="high"></li>
+            <li id="low"></li>
+            <li id="feels"></li>
+            <li id="long"></li>
+            <li id="lat"></li>
+        </ul>
+        <ul><li><img class="sunnyImageTomorrow" alt="sunny" src="../sunny.png"></li></ul>
+        <ul class="weatherStatsTomorrow">
+            <li>Wind: </li>
+            <li>Direction: </li>
+            <li>Precipitation: </li>
+            <li>Longitude: -111.8037</li>
+            <li>Latitude: 42.0119</li>
+        </ul>
+    </div>
+
+
+
+
     <form method="get" action="//autocomplete.wunderground.com/aq" id="srchfrm">
         <input type="search" name="query" id="query">
         <input type="submit" name="submit" value="Search" id="send">
@@ -49,8 +78,6 @@
     <section id="searchResults">
         <h2>Search Results</h2>
     </section>
-
-
 
 
 
