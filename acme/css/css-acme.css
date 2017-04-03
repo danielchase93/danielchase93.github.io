@@ -1,0 +1,227 @@
+body {
+background-image: url("../images/site/background.jpg");
+background-size: cover;
+font-size: .8em;
+margin: 0;
+}
+
+
+
+#wrapper {
+    background-color: white;
+    margin-left: 9%;
+    margin-right: 9%;
+}
+
+
+
+h1>img {
+    width: 8em;
+}
+
+
+
+.nav {
+list-style: none;
+display: flex;
+justify-content: center;
+margin: 0;
+padding-bottom: 1.5%;
+padding-top: 1.5%;
+font-size: 1.1em;
+background-color: #de2226;
+}
+.nav>li {
+flex: 1 1 auto;
+text-align: center;
+}
+.nav>li>a {
+    padding: .4em;
+    color: #ffffff;
+    text-decoration: none;
+}
+.nav>li>a:hover {
+    background-color: #808080;
+}
+.nav-home {
+    margin-left: -2em;
+}
+
+
+
+
+h1 {
+    margin: 0;
+    display: flex;
+    font-size: 2.5em;
+}
+
+
+
+#rocket {
+    background-image: url('../images/site/feature.jpg');
+    background-size: 100% 100%;
+    height: 15em;
+    width: 100%;
+}
+#rocket>ul {
+    color: #990033;
+    list-style: none;
+    margin-left: 38%;
+    display: flex;
+    flex-flow: column;
+}
+.rocket-head{
+    font-size: 200%;
+}
+#want {
+    width: 10em;
+}
+
+
+
+
+
+#things {
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+}
+
+
+#recipes>ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    font-size: .7em;
+}
+#recipes>ul>li {
+    flex: 1 1 auto;
+    padding: .3em;
+}
+
+
+#reviews>ul {
+    display: flex;
+    flex-flow: column;
+    font-size: .8em;
+}
+
+
+
+
+
+
+
+
+#name {
+    font-size: 3em;
+}
+
+
+#pic-summary {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#pic-summary>li {
+    flex: 1 1 auto;
+}
+#anv-img {
+    width: 15em;
+    height: 15em;
+    padding-right: .5em;
+}
+
+
+h4 {
+    margin: 0;
+    padding-right: .4em;
+    margin-top: -.28em;
+    font-size: 1.5em;
+}
+#price {
+    display: flex;
+    font-size: 1.8em;
+    color: #de2226;
+}
+#stars {
+    display: flex;
+}
+#made {
+    display: flex;
+}
+
+
+
+
+
+#footer-line {
+    background-color: #000000;
+    padding: .1em;
+    margin-top: 4em;
+}
+#footer {
+    font-size: .7em;
+}
+
+
+
+
+@media screen and (min-width: 35em) {
+body {
+font-size: 1em;
+}
+
+
+    .nav {
+        font-size: 1.3em;
+    }
+
+
+    #rocket>ul {
+        margin-left: 55%;
+    }
+
+
+    #things {
+        flex-flow: row;
+    }
+
+
+}
+
+
+
+@media screen and (min-width: 70em) {
+body {
+font-size: 1.3em;
+}
+
+
+
+    .nav {
+        font-size: 1.4em;
+        margin-bottom: -1%;
+    }
+
+
+    #rocket {
+        height: 20em;
+    }
+    #rocket>ul {
+        margin-left: 65%;
+        font-size: 1.2em;
+    }
+    #want {
+        width: 100%;
+    }
+
+    #things {
+        font-size: 1.2em;
+    }
+
+
+}
