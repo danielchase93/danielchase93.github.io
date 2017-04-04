@@ -9,8 +9,8 @@ margin: 0;
 
 #wrapper {
     background-color: white;
-    margin-left: 9%;
-    margin-right: 9%;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 
 
@@ -71,7 +71,8 @@ h1 {
     display: flex;
     flex-flow: column;
 }
-.rocket-head{
+.rocket-head>h3{
+    margin: 0;
     font-size: 200%;
 }
 #want {
@@ -87,8 +88,6 @@ h1 {
     flex-flow: column;
     flex: 1 1 auto;
 }
-
-
 #recipes>ul {
     margin: 0;
     padding: 0;
@@ -100,12 +99,20 @@ h1 {
     flex: 1 1 auto;
     padding: .3em;
 }
-
-
 #reviews>ul {
     display: flex;
     flex-flow: column;
     font-size: .8em;
+}
+#reviews>h4 {
+    margin: 0;
+    font-size: 120%;
+    padding: 0;
+}
+#recipes>h4 {
+    margin: 0;
+    font-size: 120%;
+    padding: 0;
 }
 
 
@@ -139,7 +146,8 @@ h1 {
 h4 {
     margin: 0;
     padding-right: .4em;
-    margin-top: -.28em;
+    padding-bottom: .5em;
+    margin-top: -.25em;
     font-size: 1.5em;
 }
 #price {
@@ -175,6 +183,11 @@ body {
 font-size: 1em;
 }
 
+    #wrapper {
+        margin-left: 9%;
+        margin-right: 9%;
+    }
+
 
     .nav {
         font-size: 1.3em;
@@ -187,7 +200,7 @@ font-size: 1em;
 
 
     #things {
-        flex-flow: row;
+        flex-flow: row-reverse;
     }
 
 
@@ -200,11 +213,14 @@ body {
 font-size: 1.3em;
 }
 
+    #wrapper {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 
 
     .nav {
         font-size: 1.4em;
-        margin-bottom: -1%;
     }
 
 
@@ -212,7 +228,8 @@ font-size: 1.3em;
         height: 20em;
     }
     #rocket>ul {
-        margin-left: 65%;
+        margin-left: 62%;
+        margin-right: 1%;
         font-size: 1.2em;
     }
     #want {
