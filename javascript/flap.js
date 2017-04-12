@@ -4,18 +4,18 @@ var tubes = [];
 
 function newGame() {
     bird = new component(30, 12, "black", 80, 100);
-    tube1 = new component(20, 100, "green", 600, 0);
-    tube2 = new component(20, 125, "green", 600, 175);
-    tube3 = new component(20, 200, "green", 800, 0);
-    tube4 = new component(20, 25, "green", 800, 275);
-    tube5 = new component(20, 100, "green", 1000, 0);
-    tube6 = new component(20, 125, "green", 1000, 175);
-    tube7 = new component(20, 200, "green", 1200, 0);
-    tube8 = new component(20, 25, "green", 1200, 275);
-    tube9 = new component(20, 150, "green", 1400, 0);
-    tube10 = new component(20, 75, "green", 1400, 225);
-    tube11 = new component(20, 175, "green", 1600, 0);
-    tube12 = new component(20, 50, "green", 1600, 250);
+    tube1 = new component(20, 75, "green", 600, 0);
+    tube2 = new component(20, 100, "green", 600, 150);
+    tube3 = new component(20, 170, "green", 800, 0);
+    tube4 = new component(20, 5, "green", 800, 245);
+    tube5 = new component(20, 75, "green", 1000, 0);
+    tube6 = new component(20, 100, "green", 1000, 150);
+    tube7 = new component(20, 25, "green", 1200, 0);
+    tube8 = new component(20, 150, "green", 1200, 100);
+    tube9 = new component(20, 100, "green", 1400, 0);
+    tube10 = new component(20, 75, "green", 1400, 175);
+    tube11 = new component(20, 150, "green", 1600, 0);
+    tube12 = new component(20, 25, "green", 1600, 225);
     myMap.start();
 }
 
@@ -25,7 +25,7 @@ var myMap = {
     canvas : document.createElement("canvas"),
     start : function() {
         this.canvas.width = 550;
-        this.canvas.height = 300;
+        this.canvas.height = 250;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateMap, 10);
