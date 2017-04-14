@@ -45,13 +45,13 @@ function component(w, h, color, x, y, type) {
         this.hitSides();
     }
     this.newPos2 = function () {
-        if (i >= 25) {
+        if (i >=25) {
             this.speedX = 4;
         }
-        else if (i >= 75) {
+        if (i >= 75) {
             this.speedX = 6;
         }
-        else if (i >= 150) {
+        if (i >= 150) {
             this.speedX = 8;
         }
         this.x -= this.speedX;
