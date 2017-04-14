@@ -1,21 +1,8 @@
 var bird;
-var tubes = [];
-
+var tube = [];
 
 function newGame() {
-    bird = new component(30, 12, "black", 80, 100);
-    tube1 = new component(20, 75, "green", 600, 0);
-    tube2 = new component(20, 100, "green", 600, 150);
-    tube3 = new component(20, 170, "green", 800, 0);
-    tube4 = new component(20, 5, "green", 800, 245);
-    tube5 = new component(20, 75, "green", 1000, 0);
-    tube6 = new component(20, 100, "green", 1000, 150);
-    tube7 = new component(20, 25, "green", 1200, 0);
-    tube8 = new component(20, 150, "green", 1200, 100);
-    tube9 = new component(20, 100, "green", 1400, 0);
-    tube10 = new component(20, 75, "green", 1400, 175);
-    tube11 = new component(20, 150, "green", 1600, 0);
-    tube12 = new component(20, 25, "green", 1600, 225);
+    bird = new component(40, 18, "black", 80, 200);
     myMap.start();
 }
 
@@ -24,10 +11,11 @@ function newGame() {
 var myMap = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 550;
-        this.canvas.height = 250;
+        this.canvas.width = 800;
+        this.canvas.height = 400;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frame = 0;
         this.interval = setInterval(updateMap, 10);
     },
     clear : function() {
@@ -56,16 +44,14 @@ function component(w, h, color, x, y, type) {
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
     this.newPos = function() {
-        if (this.gSpeed < 3.5) {
-            this.gSpeed += this.g;
-        }
+        this.gSpeed += this.g;
         this.x += this.speedX;
         this.y += this.speedY + this.gSpeed;
         this.hitGround();
         this.hitRoof();
     }
     this.newPos2 = function() {
-        this.speedX = 1.5;
+        this.speedX = 2;
         this.x -= this.speedX;
     }
     this.hitGround = function() {
@@ -102,50 +88,65 @@ function component(w, h, color, x, y, type) {
 
 
 function updateMap() {
-    if ((bird.doCrash(tube1)) || (bird.doCrash(tube2)) || (bird.doCrash(tube3)) || (bird.doCrash(tube4)) || (bird.doCrash(tube5)) || (bird.doCrash(tube6)) || (bird.doCrash(tube7)) || (bird.doCrash(tube8)) || (bird.doCrash(tube9)) || (bird.doCrash(tube10)) || (bird.doCrash(tube11)) || (bird.doCrash(tube12))) {
-        myMap.stop();
+    for (i=0; i<tube.length; i++) {
+        if (bird.doCrash(tube[i])) {
+            bird.update();
+            tube[i].update();
+            myMap.stop();
+            window.alert('You passed ' + i/2 + ' tubes!')
+            return;
+        }
+    }
+
+    myMap.clear();
+    myMap.frame += 1;
+
+
+    if (i >= (25*2)) {
+        if (everyinterval(125)) {
+            var tubeH = Math.floor((Math.random()*270)+25);
+            tube.push(new component(20, tubeH, "green", 820, 0));
+            tube.push(new component(20, 400-tubeH-80, "green", 820, tubeH+80));
+        }
     }
     else {
-        myMap.clear();
-        bird.newPos();
-        bird.update();
-        tube1.newPos2();
-        tube1.update();
-        tube2.newPos2();
-        tube2.update();
-        tube3.newPos2();
-        tube3.update();
-        tube4.newPos2();
-        tube4.update();
-        tube5.newPos2();
-        tube5.update();
-        tube6.newPos2();
-        tube6.update();
-        tube7.newPos2();
-        tube7.update();
-        tube8.newPos2();
-        tube8.update();
-        tube9.newPos2();
-        tube9.update();
-        tube10.newPos2();
-        tube10.update();
-        tube11.newPos2();
-        tube11.update();
-        tube12.newPos2();
-        tube12.update();
+        if (everyinterval(125)) {
+            var tubeH = Math.floor((Math.random()*250)+25);
+            tube.push(new component(20, tubeH, "green", 820, 0));
+            tube.push(new component(20, 400-tubeH-100, "green", 820, tubeH+100));
+        }
     }
 
 
+
+    for (i=0; i<tube.length; i++) {
+        tube[i].newPos2();
+        tube[i].update();
+    }
+
+
+    bird.newPos();
+    bird.update();
+
+}
+function everyinterval(n) {
+    if ((myMap.frame / n) % 1 == 0) {
+        return true;
+    }
+    return false;
 }
 
 
 
+
 function flap() {
-    if (bird.gSpeed > -2) {
-        bird.gSpeed -= 3.8;
+    if (bird.gSpeed > 0){
+        bird.gSpeed = 0;
+        bird.gSpeed -= 2.5;
     }
     else {
-        bird.gSpeed -= .1;
+        bird.gSpeed = 0;
+        bird.gSpeed -= 3;
     }
 }
 

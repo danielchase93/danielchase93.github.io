@@ -1,11 +1,8 @@
 var guy;
-
+var ball = [];
 
 function newGame() {
     guy = new component(20, 20, "black", 50, 190);
-    ball1 = new component(10, 10, "red", 1000, 200);
-    ball2 = new component(10, 10, "red", 1100, 125);
-    ball3 = new component(10, 10, "red", 1400, 225);
     myMap.start();
 }
 
@@ -18,6 +15,7 @@ var myMap = {
         this.canvas.height = 400;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frame = 0;
         this.interval = setInterval(updateMap, 10);
     },
     clear: function() {
@@ -36,7 +34,7 @@ function component(w, h, color, x, y, type) {
     this.height = h;
     this.x = x;
     this.y = y;
-    this.speedX = 0;
+    this.speedX = 2;
     this.speedY = 0;
     this.update = function () {
         ctx = myMap.context;
@@ -47,7 +45,15 @@ function component(w, h, color, x, y, type) {
         this.hitSides();
     }
     this.newPos2 = function () {
-        this.speedX = 2;
+        if (i >= 25) {
+            this.speedX = 4;
+        }
+        else if (i >= 75) {
+            this.speedX = 6;
+        }
+        else if (i >= 150) {
+            this.speedX = 8;
+        }
         this.x -= this.speedX;
     }
     this.hitSides = function () {
@@ -55,9 +61,15 @@ function component(w, h, color, x, y, type) {
         if (this.y > ground) {
             this.y = ground;
         }
-        var roof = 0;
-        if (this.y < roof) {
-            this.y = roof;
+        if (this.y < 0) {
+            this.y = 0;
+        }
+        var rightWall = myMap.canvas.width - this.width;
+        if (this.x > rightWall) {
+            this.x = rightWall;
+        }
+        if (this.x < 0) {
+            this.x = 0;
         }
     }
     this.doCrash = function (second) {
@@ -80,19 +92,59 @@ function component(w, h, color, x, y, type) {
 
 
 function updateMap() {
-    if ((guy.doCrash(ball1)) || (guy.doCrash(ball2)) || (guy.doCrash(ball3))) {
-        myMap.stop();
-    } else {
-        myMap.clear();
-        guy.newPos();
-        guy.update();
-        ball1.newPos2();
-        ball1.update();
-        ball2.newPos2();
-        ball2.update();
-        ball3.newPos2();
-        ball3.update();
+    for (i=0; i<ball.length; i++) {
+        if (guy.doCrash(ball[i])) {
+            guy.update();
+            ball[i].update();
+            myMap.stop();
+            window.alert('You dodged ' + i + ' balls!')
+            return;
+        }
     }
+
+    myMap.clear();
+    myMap.frame += 1;
+
+
+
+    if (i >= 0) {
+        if (everyinterval(50)) {
+            ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
+        }
+    }
+    if (i >= 25) {
+        if (everyinterval(30)) {
+            ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
+        }
+    }
+    if (i >= 75) {
+        if (everyinterval(20)) {
+            ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
+        }
+    }
+    if (i >= 150) {
+        if (everyinterval(15)) {
+            ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
+        }
+    }
+
+
+
+    for (i=0; i<ball.length; i++) {
+        ball[i].newPos2();
+        ball[i].update();
+    }
+
+
+    guy.newPos();
+    guy.update();
+
+}
+function everyinterval(n) {
+    if ((myMap.frame / n) % 1 == 0) {
+        return true;
+    }
+    return false;
 }
 
 
@@ -100,16 +152,16 @@ function updateMap() {
 document.onkeydown = moveGuy;
 function moveGuy(e) {
     if (e.keyCode == '38') {
-        guy.y -= 10;
+        guy.y -= 25;
     }
     else if (e.keyCode == '40') {
-        guy.y += 10;
+        guy.y += 25;
     }
     else if (e.keyCode == '37') {
-        guy.x -= 10;
+        guy.x -= 25;
     }
     else if (e.keyCode == '39') {
-        guy.x += 10;
+        guy.x += 25;
     }
 }
 
