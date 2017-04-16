@@ -1,11 +1,14 @@
 var guy;
 var ball = [];
 
-function newGame() {
+
+function startGame() {
     guy = new component(20, 20, "black", 50, 190);
     myMap.start();
 }
-
+function newGame() {
+    location.reload();
+}
 
 
 var myMap = {
@@ -15,6 +18,7 @@ var myMap = {
         this.canvas.height = 400;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.clear();
         this.frame = 0;
         this.interval = setInterval(updateMap, 10);
     },
@@ -37,22 +41,24 @@ function component(w, h, color, x, y, type) {
     this.speedX = 2;
     this.speedY = 0;
     this.update = function () {
-        ctx = myMap.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        myMap.context.fillStyle = color;
+        myMap.context.fillRect(this.x, this.y, this.width, this.height);
     }
     this.newPos = function () {
         this.hitSides();
     }
     this.newPos2 = function () {
         if (i >=25) {
-            this.speedX = 4;
+            this.speedX = 3;
         }
         if (i >= 75) {
-            this.speedX = 6;
+            this.speedX = 4;
         }
         if (i >= 150) {
-            this.speedX = 8;
+            this.speedX = 5;
+        }
+        if (i >= 300) {
+            this.speedX = 6;
         }
         this.x -= this.speedX;
     }
@@ -106,26 +112,26 @@ function updateMap() {
     myMap.frame += 1;
 
 
+    var n;
+    if (i >= 0 && i <=24) {
+        n = 50;
+    }
+    else if (i >= 25 && i <= 74) {
+        n = 25;
+    }
+    else if (i >= 75 && i <= 149) {
+        n = 15;
+    }
+    else if (i >= 150 && i <= 299) {
+        n = 10;
+    }
+    else if (i >= 300) {
+        n = 5;
+    }
 
-    if (i >= 0) {
-        if (everyinterval(50)) {
-            ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
-        }
-    }
-    if (i >= 25) {
-        if (everyinterval(30)) {
-            ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
-        }
-    }
-    if (i >= 75) {
-        if (everyinterval(20)) {
-            ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
-        }
-    }
-    if (i >= 150) {
-        if (everyinterval(15)) {
-            ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
-        }
+
+    if (everyinterval(n)) {
+        ball.push(new component(10, 10, "red", 810, Math.floor((Math.random() * 390) + 1)));
     }
 
 

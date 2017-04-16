@@ -1,9 +1,12 @@
 var bird;
 var tube = [];
 
-function newGame() {
+function startGame() {
     bird = new component(40, 18, "black", 80, 200);
     myMap.start();
+}
+function newGame() {
+    location.reload();
 }
 
 
@@ -102,18 +105,25 @@ function updateMap() {
     myMap.frame += 1;
 
 
-    if (i >= (25*2)) {
+    if (i >= 100) {
         if (everyinterval(125)) {
             var tubeH = Math.floor((Math.random()*270)+25);
             tube.push(new component(20, tubeH, "green", 820, 0));
             tube.push(new component(20, 400-tubeH-80, "green", 820, tubeH+80));
         }
     }
-    else {
+    else if (i >= 50 && i <= 99) {
         if (everyinterval(125)) {
             var tubeH = Math.floor((Math.random()*250)+25);
             tube.push(new component(20, tubeH, "green", 820, 0));
             tube.push(new component(20, 400-tubeH-100, "green", 820, tubeH+100));
+        }
+    }
+    else {
+        if (everyinterval(125)) {
+            var tubeH = Math.floor((Math.random()*230)+25);
+            tube.push(new component(20, tubeH, "green", 820, 0));
+            tube.push(new component(20, 400-tubeH-120, "green", 820, tubeH+120));
         }
     }
 
@@ -138,7 +148,12 @@ function everyinterval(n) {
 
 
 
-
+document.onkeydown = now;
+function now(e) {
+    if (e.keyCode == '32') {
+        flap();
+    }
+}
 function flap() {
     if (bird.gSpeed > 0){
         bird.gSpeed = 0;
