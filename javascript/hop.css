@@ -2,7 +2,7 @@
     list-style: none;
     display: flex;
     flex-flow: column;
-    margin-top: -2em;
+    margin-top: -4em;
 }
 
 
@@ -10,7 +10,7 @@
     width: 2.3em;
     height: 1.6em;
     text-align: center;
-    margin: .2em;
+    margin: .1em;
     margin-left: 2.8em;
     padding-top: .5em;
     border-style: double;
@@ -28,7 +28,7 @@
     width: 2.3em;
     height: 1.6em;
     text-align: center;
-    margin: .2em;
+    margin: .1em;
     padding-top: .5em;
     border-style: double;
     border-width: .2em;
