@@ -1,0 +1,36 @@
+#now {
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    margin-top: -2em;
+}
+
+
+#now>li {
+    width: 2.3em;
+    height: 1.6em;
+    text-align: center;
+    margin: .2em;
+    margin-left: 2.8em;
+    padding-top: .5em;
+    border-style: double;
+    border-width: .2em;
+    font-size: 2em;
+}
+
+
+.whatever {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+}
+.whatever>li {
+    width: 2.3em;
+    height: 1.6em;
+    text-align: center;
+    margin: .2em;
+    padding-top: .5em;
+    border-style: double;
+    border-width: .2em;
+    font-size: 2em;
+}
