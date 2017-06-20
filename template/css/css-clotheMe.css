@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: .5em;
+    background-color: #ccced1;
+    background-size: cover;
+}
+
+
+
+#wrapper {
+    background-color: #edf0f4;
+    margin-left: 6%;
+    margin-right: 6%;
+    height: 100%;
+}
+
+
+header {
+    display: flex;
+    border-style: solid;
+    border-color: black;
+}
+header>* {
+    flex: 1 1 auto;
+}
+h1 {
+    font-size: 5em;
+    font-weight: 100;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+#signIn>a {
+    color: black;
+    margin: 1.5em;
+    float: right;
+    font-style: normal;
+}
+#signInImg {
+    width: 2em;
+    height: 2em;
+}
+
+
+
+.nav {
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    width: 98.2%;
+    background-color: #edf0f4;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.8em;
+}
+.nav>li {
+    flex: .1 .1 auto;
+    text-align: center;
+    border-right: .1em solid #ccced1;
+}
+.nav>li:hover {
+    background-color: #ccced1;
+}
+.nav>li>a {
+    display: block;
+    text-decoration: none;
+    padding: .5em;
+    color: black;
+}
+
+
+
+#slogan {
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/clotheMe.jpg);
+    background-size: 100% 100%;
+    height: 25em;
+    width: 98.2%;
+    border-style: solid;
+    border-color: black;
+}
+#explain {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-style: italic;
+    color: white;
+    font-size: 2.2em;
+}
+#explain>#best {
+    margin: 0;
+    padding: 0;
+    flex: 1 1 auto;
+    flex-flow: column;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+
+#sales>h2 {
+    margin-bottom: -.5em;
+    font-size: 4em;
+    font-weight: 800;
+    text-align: center;
+    font-stretch: expanded;
+    background-color: white;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: black;
+    border-bottom-color: black;
+}
+#sales>ul {
+    display: flex;
+}
+#sales>ul>li {
+    flex: 1 1 auto;
+    list-style: none;
+}
+#sales>ul>li>a>img {
+    width: 9em;
+    height: 20em;
+    border-radius: 1em;
+    border: .2em solid black;
+}
+#sales>ul>li>a>img:hover {
+    border-color: #8bd5e5;
+}
+#saleTitle {
+    margin-bottom: -.5em;
+    margin-left: -5%;
+    font-size: 3em;
+    font-weight: 700;
+    color: #e590a5;
+}
+#saleDsc {
+    margin-bottom: 0;
+    margin-left: -5%;
+    font-size: 1.8em;
+}
+#saleImg {
+    margin-left: -6%;
+}
+
+
+
+#footer-line {
+    background-color: #000000;
+    padding: .1em;
+    margin-top: 4em;
+}
+#footer {
+    font-size: .7em;
+    text-align: center;
+}
+#footer>ul {
+    list-style: none;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 35em) {
+    body {
+        font-size: .8em;
+    }
+
+    #wrapper {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+
+    .nav {
+        font-size: 2em;
+        width: 99.2%;
+    }
+
+    #slogan {
+        height: 30em;
+        width: 99.2%;
+    }
+
+    #explain {
+        font-size: 2.5em;
+        margin-left: 2%;
+    }
+    #explain>#best {
+        font-size: 3.5em;
+    }
+
+    #saleTitle {
+        margin-left: 1%;
+    }
+    #saleDsc {
+        margin-left: 2%;
+    }
+    #saleImg {
+        margin-left: 5%;
+    }
+
+}
+
+
+
+@media screen and (min-width: 70em) {
+    body {
+        font-size: 1em;
+    }
+
+    #wrapper {
+        margin-left: 9%;
+        margin-right: 9%;
+    }
+
+    .nav {
+        width: 99.6%;
+    }
+
+    #slogan {
+        width: 99.6%;
+    }
+
+    #saleTitle {
+        margin-left: 10%;
+    }
+    #saleDsc {
+        margin-left: 12%;
+    }
+    #saleImg {
+        margin-left: 13%;
+    }
+
+}
+
+
